@@ -1,0 +1,810 @@
+{
+  "run_id": "demo_discovery_56569",
+  "timestamp": "2026-09-11T10:47:33.039778",
+  "result": {
+    "run_id": "4f93266e-c1d5-4216-9e80-fb962c8ca0f2",
+    "artifact_id": null,
+    "artifact_version": null,
+    "mode": "discovery",
+    "status": "failure",
+    "started_at": "2026-09-11 10:46:48.512670",
+    "completed_at": "2026-09-11 10:47:33.039092",
+    "inputs": {
+      "member_id": "12345"
+    },
+    "outputs": {},
+    "business_outcome": null,
+    "error": "Max steps (15) reached",
+    "error_details": null,
+    "steps_executed": [],
+    "evidence": {}
+  },
+  "steps": [
+    {
+      "step_id": "step_0",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:46:48.557140",
+      "completed_at": "2026-09-11T10:46:49.123793",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 566
+    },
+    {
+      "step_id": "step_1",
+      "step_description": "Enter member ID 12345",
+      "action": "type_text",
+      "target": {
+        "selector": "input[name='member_id']",
+        "text": "12345",
+        "clear_first": true
+      },
+      "input_value": "12345",
+      "started_at": "2026-09-11T10:46:49.660393",
+      "completed_at": "2026-09-11T10:46:59.727661",
+      "success": false,
+      "error": "Type failed: Locator.wait_for: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"input[name='member_id']\") to be visible\n",
+      "output": null,
+      "screenshots": [
+        "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_failed_type_text_104659.png"
+      ],
+      "dom_snapshots": [
+        "evidence/demo_discovery_56569/dom_demo_discovery_56569_failed_type_text_104659.html"
+      ],
+      "logs": [],
+      "duration_ms": 10067
+    },
+    {
+      "step_id": "step_2",
+      "step_description": "Click Search button",
+      "action": "click",
+      "target": {
+        "selector": "button[type='submit']",
+        "strategy": "css"
+      },
+      "input_value": null,
+      "started_at": "2026-09-11T10:47:00.257417",
+      "completed_at": "2026-09-11T10:47:10.324250",
+      "success": false,
+      "error": "Click failed: Locator.wait_for: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"button[type='submit']\") to be visible\n",
+      "output": null,
+      "screenshots": [
+        "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_failed_click_104710.png"
+      ],
+      "dom_snapshots": [
+        "evidence/demo_discovery_56569/dom_demo_discovery_56569_failed_click_104710.html"
+      ],
+      "logs": [],
+      "duration_ms": 10066
+    },
+    {
+      "step_id": "step_3",
+      "step_description": "Extract savings balance",
+      "action": "extract_text",
+      "target": {
+        "selector": "td:contains('Savings') + td",
+        "attribute": "text"
+      },
+      "input_value": null,
+      "started_at": "2026-09-11T10:47:10.840224",
+      "completed_at": "2026-09-11T10:47:20.891353",
+      "success": false,
+      "error": "Extract failed: Locator.wait_for: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"td:contains('Savings') + td\")\n",
+      "output": null,
+      "screenshots": [
+        "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_failed_extract_text_104720.png"
+      ],
+      "dom_snapshots": [
+        "evidence/demo_discovery_56569/dom_demo_discovery_56569_failed_extract_text_104720.html"
+      ],
+      "logs": [],
+      "duration_ms": 10051
+    },
+    {
+      "step_id": "step_4",
+      "step_description": "Verify final state",
+      "action": "get_page_state",
+      "target": {},
+      "input_value": null,
+      "started_at": "2026-09-11T10:47:21.425040",
+      "completed_at": "2026-09-11T10:47:21.425416",
+      "success": true,
+      "error": null,
+      "output": "SurfaceState(url=None, title=None, viewport={'width': 1280, 'height': 720}, elements=[], screenshot=None, timestamp=0)",
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 0
+    },
+    {
+      "step_id": "step_5",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:21.948599",
+      "completed_at": "2026-09-11T10:47:22.546474",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 597
+    },
+    {
+      "step_id": "step_6",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:23.074980",
+      "completed_at": "2026-09-11T10:47:23.639359",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 564
+    },
+    {
+      "step_id": "step_7",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:24.176412",
+      "completed_at": "2026-09-11T10:47:24.737708",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 561
+    },
+    {
+      "step_id": "step_8",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:25.272885",
+      "completed_at": "2026-09-11T10:47:25.836843",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 563
+    },
+    {
+      "step_id": "step_9",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:26.374990",
+      "completed_at": "2026-09-11T10:47:26.955179",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 580
+    },
+    {
+      "step_id": "step_10",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:27.488720",
+      "completed_at": "2026-09-11T10:47:28.052081",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 563
+    },
+    {
+      "step_id": "step_11",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:28.588883",
+      "completed_at": "2026-09-11T10:47:29.174393",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 585
+    },
+    {
+      "step_id": "step_12",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:29.708093",
+      "completed_at": "2026-09-11T10:47:30.274714",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 566
+    },
+    {
+      "step_id": "step_13",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:30.826322",
+      "completed_at": "2026-09-11T10:47:31.387385",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 561
+    },
+    {
+      "step_id": "step_14",
+      "step_description": "Navigate to member lookup page",
+      "action": "navigate",
+      "target": {
+        "url": "http://localhost:5000/member-lookup",
+        "wait_until": "networkidle"
+      },
+      "input_value": "http://localhost:5000/member-lookup",
+      "started_at": "2026-09-11T10:47:31.923849",
+      "completed_at": "2026-09-11T10:47:32.505477",
+      "success": true,
+      "error": null,
+      "output": {
+        "url": "http://localhost:5000/member-lookup",
+        "status": 403
+      },
+      "screenshots": [],
+      "dom_snapshots": [],
+      "logs": [],
+      "duration_ms": 581
+    }
+  ],
+  "evidence_records": [
+    {
+      "evidence_id": "d7271772",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:46:48.554041",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_0"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_0_104648.png"
+    },
+    {
+      "evidence_id": "5650c4d3",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:46:48.556714",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_0"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_0_104648.html"
+    },
+    {
+      "evidence_id": "45709349",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:46:49.156376",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_1"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_1_104649.png"
+    },
+    {
+      "evidence_id": "a7a7ab9b",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:46:49.158426",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_1"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_1_104649.html"
+    },
+    {
+      "evidence_id": "0c595616",
+      "run_id": "demo_discovery_56569",
+      "step_id": "step_1",
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:46:59.723339",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "failed_type_text"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_failed_type_text_104659.png"
+    },
+    {
+      "evidence_id": "23396970",
+      "run_id": "demo_discovery_56569",
+      "step_id": "step_1",
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:46:59.727477",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "failed_type_text"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_failed_type_text_104659.html"
+    },
+    {
+      "evidence_id": "215a7620",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:46:59.751336",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_2"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_2_104659.png"
+    },
+    {
+      "evidence_id": "10afd3bb",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:46:59.756353",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_2"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_2_104659.html"
+    },
+    {
+      "evidence_id": "e45275ee",
+      "run_id": "demo_discovery_56569",
+      "step_id": "step_2",
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:10.321160",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "failed_click"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_failed_click_104710.png"
+    },
+    {
+      "evidence_id": "58093d28",
+      "run_id": "demo_discovery_56569",
+      "step_id": "step_2",
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:10.323455",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "failed_click"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_failed_click_104710.html"
+    },
+    {
+      "evidence_id": "7ac5359f",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:10.336385",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_3"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_3_104710.png"
+    },
+    {
+      "evidence_id": "6048cb96",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:10.338186",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_3"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_3_104710.html"
+    },
+    {
+      "evidence_id": "64e1c8b0",
+      "run_id": "demo_discovery_56569",
+      "step_id": "step_3",
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:20.889419",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "failed_extract_text"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_failed_extract_text_104720.png"
+    },
+    {
+      "evidence_id": "29f7203a",
+      "run_id": "demo_discovery_56569",
+      "step_id": "step_3",
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:20.891199",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "failed_extract_text"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_failed_extract_text_104720.html"
+    },
+    {
+      "evidence_id": "4ad714c9",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:20.919700",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_4"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_4_104720.png"
+    },
+    {
+      "evidence_id": "a1ca9dca",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:20.921347",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_4"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_4_104720.html"
+    },
+    {
+      "evidence_id": "0eb70fb7",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:21.446319",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_5"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_5_104721.png"
+    },
+    {
+      "evidence_id": "0eb79789",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:21.447503",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_5"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_5_104721.html"
+    },
+    {
+      "evidence_id": "1fe53a3f",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:22.571879",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_6"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_6_104722.png"
+    },
+    {
+      "evidence_id": "6f539036",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:22.573164",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_6"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_6_104722.html"
+    },
+    {
+      "evidence_id": "bdb8b598",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:23.673058",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_7"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_7_104723.png"
+    },
+    {
+      "evidence_id": "375c9b4c",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:23.674731",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_7"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_7_104723.html"
+    },
+    {
+      "evidence_id": "2dfb9045",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:24.769705",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_8"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_8_104724.png"
+    },
+    {
+      "evidence_id": "1138a8d9",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:24.771083",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_8"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_8_104724.html"
+    },
+    {
+      "evidence_id": "4eac1432",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:25.871254",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_9"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_9_104725.png"
+    },
+    {
+      "evidence_id": "29dcd93a",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:25.873204",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_9"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_9_104725.html"
+    },
+    {
+      "evidence_id": "c9ed0c31",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:26.985560",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_10"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_10_104726.png"
+    },
+    {
+      "evidence_id": "917a0983",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:26.986789",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_10"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_10_104726.html"
+    },
+    {
+      "evidence_id": "f04ba25a",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:28.085911",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_11"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_11_104728.png"
+    },
+    {
+      "evidence_id": "fa5c8240",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:28.087279",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_11"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_11_104728.html"
+    },
+    {
+      "evidence_id": "bf7b3dc2",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:29.204681",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_12"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_12_104729.png"
+    },
+    {
+      "evidence_id": "49035d49",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:29.206444",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_12"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_12_104729.html"
+    },
+    {
+      "evidence_id": "83daffdc",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:30.321367",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_13"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_13_104730.png"
+    },
+    {
+      "evidence_id": "a2fbc141",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:30.324757",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_13"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_13_104730.html"
+    },
+    {
+      "evidence_id": "e0c5ea13",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:31.420846",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_14"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_14_104731.png"
+    },
+    {
+      "evidence_id": "f403a55f",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:31.422542",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_14"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_14_104731.html"
+    },
+    {
+      "evidence_id": "e759be24",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "screenshot",
+      "timestamp": "2026-09-11T10:47:32.536463",
+      "data": "<binary: 4254 bytes>",
+      "metadata": {
+        "label": "step_15"
+      },
+      "file_path": "evidence/demo_discovery_56569/screenshot_demo_discovery_56569_step_15_104732.png"
+    },
+    {
+      "evidence_id": "31fa2eba",
+      "run_id": "demo_discovery_56569",
+      "step_id": null,
+      "type": "dom_snapshot",
+      "timestamp": "2026-09-11T10:47:32.537794",
+      "data": "<html><head></head><body></body></html>",
+      "metadata": {
+        "label": "step_15"
+      },
+      "file_path": "evidence/demo_discovery_56569/dom_demo_discovery_56569_step_15_104732.html"
+    }
+  ]
+}

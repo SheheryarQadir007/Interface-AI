@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "artifact_id": "art_abc12345",
+    "name": "lookup_member_savings_balance",
+    "version": "1.0.0",
+    "description": "Look up a member by ID and extract their savings account balance",
+    "created_at": "2026-09-11T10:00:00.000000",
+    "updated_at": "2026-09-11T10:00:00.000000",
+    "created_by": "discovery_agent",
+    "tags": ["member", "savings", "balance", "lookup", "banking"],
+    "target_application": "demo_banking",
+    "target_url_pattern": "http://localhost:5002/*"
+  },
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "description": "Member ID to look up (5-digit number)",
+      "required": true,
+      "default": null,
+      "enum_values": null,
+      "sensitive": false,
+      "validation_pattern": "^\\d{5}$"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "number",
+      "description": "Current savings account balance in USD",
+      "source_step": "step_3",
+      "extract_path": "$.balance"
+    },
+    {
+      "name": "member_name",
+      "type": "string",
+      "description": "Full name of the member",
+      "source_step": "step_2",
+      "extract_path": "$.name"
+    },
+    {
+      "name": "member_status",
+      "type": "string",
+      "description": "Member account status",
+      "source_step": "step_2",
+      "extract_path": "$.status"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "step_0",
+      "action": "navigate",
+      "description": "Navigate to member lookup page",
+      "target": null,
+      "value": null,
+      "url": "http://localhost:5002/member-lookup",
+      "key": null,
+      "wait_for": "networkidle",
+      "wait_timeout_ms": 10000,
+      "extract_as": null,
+      "extract_attribute": null,
+      "extract_multiple": false,
+      "checkpoint": "page_loaded",
+      "checkpoint_locator": null,
+      "checkpoint_timeout_ms": 5000,
+      "continue_on_failure": false,
+      "expected_errors": [],
+      "retry_count": 2,
+      "retry_delay_ms": 1000,
+      "is_risky": false,
+      "requires_confirmation": false
+    },
+    {
+      "step_id": "step_1",
+      "action": "type",
+      "description": "Enter member ID in search field",
+      "target": {
+        "primary": "css_selector",
+        "primary_value": "input[name='member_id']",
+        "fallbacks": [
+          {
+            "strategy": "test_id",
+            "value": "member-id-input"
+          },
+          {
+            "strategy": "aria_label",
+            "value": "Member ID"
+          }
+        ],
+        "frame_context": null,
+        "description": "Member ID input field"
+      },
+      "value": "{{member_id}}",
+      "url": null,
+      "key": null,
+      "wait_for": null,
+      "wait_timeout_ms": 10000,
+      "extract_as": null,
+      "extract_attribute": null,
+      "extract_multiple": false,
+      "checkpoint": null,
+      "checkpoint_locator": null,
+      "checkpoint_timeout_ms": 5000,
+      "continue_on_failure": false,
+      "expected_errors": [],
+      "retry_count": 2,
+      "retry_delay_ms": 1000,
+      "is_risky": false,
+      "requires_confirmation": false
+    },
+    {
+      "step_id": "step_2",
+      "action": "click",
+      "description": "Click Search button to find member",
+      "target": {
+        "primary": "css_selector",
+        "primary_value": "button[type='submit']",
+        "fallbacks": [
+          {
+            "strategy": "text_content",
+            "value": "Search"
+          },
+          {
+            "strategy": "role_and_name",
+            "value": "button::Search"
+          }
+        ],
+        "frame_context": null,
+        "description": "Search button"
+      },
+      "value": null,
+      "url": null,
+      "key": null,
+      "wait_for": "networkidle",
+      "wait_timeout_ms": 10000,
+      "extract_as": null,
+      "extract_attribute": null,
+      "extract_multiple": false,
+      "checkpoint": "member_found",
+      "checkpoint_locator": {
+        "primary": "text_content",
+        "primary_value": "Member Details",
+        "fallbacks": [],
+        "frame_context": null,
+        "description": "Member details section"
+      },
+      "checkpoint_timeout_ms": 5000,
+      "continue_on_failure": false,
+      "expected_errors": ["Member not found"],
+      "retry_count": 2,
+      "retry_delay_ms": 1000,
+      "is_risky": false,
+      "requires_confirmation": false
+    },
+    {
+      "step_id": "step_3",
+      "action": "extract",
+      "description": "Extract savings account balance from member details",
+      "target": {
+        "primary": "text_content",
+        "primary_value": "Savings",
+        "fallbacks": [
+          {
+            "strategy": "css_selector",
+            "value": "td:contains('Savings') + td"
+          }
+        ],
+        "frame_context": null,
+        "description": "Savings account balance cell"
+      },
+      "value": null,
+      "url": null,
+      "key": null,
+      "wait_for": null,
+      "wait_timeout_ms": 10000,
+      "extract_as": "savings_balance",
+      "extract_attribute": "text",
+      "extract_multiple": false,
+      "checkpoint": "balance_extracted",
+      "checkpoint_locator": null,
+      "checkpoint_timeout_ms": 5000,
+      "continue_on_failure": false,
+      "expected_errors": [],
+      "retry_count": 1,
+      "retry_delay_ms": 500,
+      "is_risky": false,
+      "requires_confirmation": false
+    }
+  ],
+  "success_condition": {
+    "type": "checkpoint",
+    "value": "balance_extracted",
+    "description": "Savings balance successfully extracted from member details"
+  },
+  "known_outcomes": [
+    {
+      "name": "member_not_found",
+      "description": "Member ID does not exist in the system",
+      "detection": {
+        "type": "element_text",
+        "locator": {
+          "primary": "text_content",
+          "primary_value": "Member not found",
+          "fallbacks": [],
+          "frame_context": null,
+          "description": "Error message for member not found"
+        },
+        "pattern": "not found"
+      },
+      "is_recoverable": false,
+      "recovery_steps": []
+    },
+    {
+      "name": "no_savings_account",
+      "description": "Member exists but has no savings account",
+      "detection": {
+        "type": "element_absent",
+        "locator": {
+          "primary": "text_content",
+          "primary_value": "Savings",
+          "fallbacks": [],
+          "frame_context": null,
+          "description": "Savings account row"
+        },
+        "pattern": "Savings"
+      },
+      "is_recoverable": false,
+      "recovery_steps": []
+    }
+  ],
+  "preconditions": [
+    "Member ID is a valid 5-digit number",
+    "Demo banking application is running and accessible",
+    "User has permission to view member details"
+  ],
+  "postconditions": [
+    "Member details are displayed on screen",
+    "Savings balance is returned as output",
+    "No state changes made to the system"
+  ],
+  "allowed_domains": [
+    "localhost",
+    "127.0.0.1"
+  ],
+  "risky_steps": []
+}
